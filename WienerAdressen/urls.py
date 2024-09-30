@@ -14,18 +14,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.urls import path
 
-from .. import views
-from ..views import adressformular
+from adressformular import views
 
-adressformular()
-from django.contrib import admin
-from django.urls import path
+# Importiere die Views aus dem aktuellen Verzeichnis (adressformular)
 
 urlpatterns = [
-path('formular/', views.adressformular, name='adressformular'),  # URL für das Adressformular
-    path('adresse_speichern/', views.adresse_speichern, name='adresse_speichern'),  # URL für den API-Endpunkt zum Speichern der Adresse
-    path('adressen/', views.adressen_anzeigen, name='adressen_anzeigen'),  # URL für die Übersicht der Adressen
-    path('admin/', admin.site.urls),
+    path('formular/', views.adressformular, name='adressformular'),
+    path('adresse_speichern/', views.adresse_speichern, name='adresse_speichern'),
+    path('adressen/', views.adressen_anzeigen, name='adressen_anzeigen'),
 ]
+

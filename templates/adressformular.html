@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adressformular</title>
+</head>
+<body>
+    <h1>Adresse eingeben</h1>
+
+    <form method="POST" action="{% url 'adresse_speichern' %}">
+        {% csrf_token %}
+        <label for="strasse">Straße:</label>
+        <input type="text" id="strasse" name="strasse" required><br><br>
+
+        <label for="hausnummer">Hausnummer:</label>
+        <input type="text" id="hausnummer" name="hausnummer" required><br><br>
+
+        <label for="plz">PLZ:</label>
+        <input type="text" id="plz" name="plz" required><br><br>
+
+        <label for="ort">Ort:</label>
+        <input type="text" id="ort" name="ort" required><br><br>
+
+        <button type="submit">Adresse speichern</button>
+    </form>
+
+    <br>
+    <a href="{% url 'adressen_anzeigen' %}">Gespeicherte Adressen anzeigen</a>
+</body>
+</html>

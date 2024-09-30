@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adressübersicht</title>
+</head>
+<body>
+    <h1>Gespeicherte Adressen</h1>
+
+    <table border="1">
+        <tr>
+            <th>Straße</th>
+            <th>Hausnummer</th>
+            <th>PLZ</th>
+            <th>Ort</th>
+            <th>Bundesland</th>
+            <th>Zeitstempel</th>
+        </tr>
+        {% for adresse in adressen %}
+        <tr>
+            <td>{{ adresse.strasse }}</td>
+            <td>{{ adresse.hausnummer }}</td>
+            <td>{{ adresse.plz }}</td>
+            <td>{{ adresse.ort }}</td>
+            <td>{{ adresse.bundesland }}</td>
+            <td>{{ adresse.timestamp }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6">Keine Adressen gefunden</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="{% url 'adressformular' %}">Neue Adresse eingeben</a>
+</body>
+</html>

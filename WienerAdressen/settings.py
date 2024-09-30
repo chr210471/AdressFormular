@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'adressformular.migrations.urls'
+ROOT_URLCONF = 'WienerAdressen.urls'
 
 TEMPLATES = [
     {
@@ -128,6 +128,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    # andere Apps...
-    'adressformular',  # Hier deine App eintragen
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    # Deine Apps hier...
+    'adressformular.apps.AdressformularConfig',
 ]
